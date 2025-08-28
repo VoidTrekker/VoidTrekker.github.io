@@ -1,0 +1,94 @@
+---
+layout: default
+title: CV
+permalink: /cv/
+nav_order: 2
+---
+
+{% assign cv = site.data.cv %}
+
+<h1>{{ cv.basics.name }}</h1>
+<p>
+  <strong>{{ cv.basics.label }}</strong><br>
+  {% if cv.basics.email %}<a href="mailto:{{ cv.basics.email }}">{{ cv.basics.email }}</a><br>{% endif %}
+  {% if cv.basics.website %}<a href="{{ cv.basics.website }}">{{ cv.basics.website }}</a><br>{% endif %}
+  {% if cv.basics.location %}
+    {{ cv.basics.location.city }}{% if cv.basics.location.countryCode %}, {{ cv.basics.location.countryCode }}{% endif %}
+  {% endif %}
+</p>
+
+{% if cv.basics.summary %}
+<p>{{ cv.basics.summary }}</p>
+{% endif %}
+
+{% if cv.basics.profiles and cv.basics.profiles.size > 0 %}
+<h2>Profiles</h2>
+<ul>
+  {% for p in cv.basics.profiles %}
+    <li>
+      {% if p.url %}<a href="{{ p.url }}">{% endif %}
+      {{ p.network }}{% if p.username %}: {{ p.username }}{% endif %}
+      {% if p.url %}</a>{% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if cv.work and cv.work.size > 0 %}
+<h2>Work</h2>
+<ul>
+  {% for job in cv.work %}
+    <li>
+      <strong>{{ job.position }}</strong>, {{ job.name }}
+      {% if job.startDate %} ({{ job.startDate }}{% if job.endDate %} – {{ job.endDate }}{% endif %}){% endif %}<br>
+      {% if job.summary %}{{ job.summary }}{% endif %}
+      {% if job.highlights and job.highlights.size > 0 %}
+        <ul>
+          {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if cv.education and cv.education.size > 0 %}
+<h2>Education</h2>
+<ul>
+  {% for ed in cv.education %}
+    <li>
+      <strong>{{ ed.studyType }}</strong>, {{ ed.area }} — {{ ed.institution }}
+      {% if ed.startDate %} ({{ ed.startDate }}{% if ed.endDate %} – {{ ed.endDate }}{% endif %}){% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if cv.skills and cv.skills.size > 0 %}
+<h2>Skills</h2>
+<ul>
+  {% for s in cv.skills %}
+    <li>
+      {{ s.name }}{% if s.level %} — {{ s.level }}{% endif %}
+      {% if s.keywords and s.keywords.size > 0 %}
+        <br><small>{{ s.keywords | join: ", " }}</small>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if cv.publications and cv.publications.size > 0 %}
+<h2>Selected Publications</h2>
+<ul>
+  {% for pub in cv.publications %}
+    <li>
+      {% if pub.url %}<a href="{{ pub.url }}">{% endif %}
+      {{ pub.name }}{% if pub.url %}</a>{% endif %}.
+      {% if pub.publisher %} {{ pub.publisher }}.{% endif %}
+      {% if pub.releaseDate %} {{ pub.releaseDate }}.{% endif %}
+      {% if pub.summary %} <em>{{ pub.summary }}</em>{% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
