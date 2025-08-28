@@ -5,6 +5,22 @@ permalink: /cv/
 nav_order: 2
 ---
 
+<style>
+.no-bullets{list-style:none;padding-left:0;margin:0}
+.no-bullets li{margin:.25rem 0}
+
+.date-box {
+  display: inline-block;
+  background-color: #CA7A2C;
+  color: #fff;          /* white text for contrast */
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9em;     /* slightly smaller */
+}
+</style>
+
+
 {% assign cv = site.data.cv %}
 <style>
 .no-bullets{list-style:none;padding-left:0;margin:0}
@@ -58,7 +74,9 @@ nav_order: 2
     {% assign start = job.startDate %}
     {% assign end   = job.endDate | default: 'Present' %}
     <li>
-      {% if start %}{{ start }} – {{ end }}{% endif %}<br>
+      {% if start %}
+        <span class="date-box">{{ start }} – {{ end }}</span><br>
+      {% endif %}
       {% if job.position %}{{ job.position }}<br>{% endif %}
       {% if job.institution %}{{ job.institution }}<br>{% elsif job.name %}{{ job.name }}<br>{% endif %}
       {% if job.summary %}{{ job.summary }}<br>{% endif %}
