@@ -6,6 +6,10 @@ nav_order: 2
 ---
 
 {% assign cv = site.data.cv %}
+<style>
+.no-bullets{list-style:none;padding-left:0;margin:0}
+.no-bullets li{margin:.25rem 0}
+</style>
 
 <!-- ===== Header / Basics ===== -->
 <h1>{{ cv.basics.name }}</h1>
@@ -51,22 +55,20 @@ nav_order: 2
 <h2>Work</h2>
 <ul>
   {% for job in cv.work %}
+    {% assign start = job.startDate %}
+    {% assign end   = job.endDate | default: 'Present' %}
     <li>
-      <strong>{{ job.position }}</strong>{% if job.name %}, {{ job.name }}{% endif %}
-      {% if job.startDate %}
-        ({{ job.startDate }}{% if job.endDate %} – {{ job.endDate }}{% endif %})
-      {% endif %}<br>
-      {% if job.summary %}{{ job.summary }}{% endif %}
-      {% if job.website %}<br><a href="{{ job.website }}" rel="noopener">{{ job.website }}</a>{% endif %}
-      {% if job.highlights %}
-        {% if job.highlights.first or job.highlights.size %}
-          <ul>
-            {% for h in job.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
-          </ul>
-        {% else %}
-          <div>{{ job.highlights | markdownify | remove: '<p>' | remove: '</p>' }}</div>
-        {% endif %}
-      {% endif %}
+      {#-- dates line --#}
+      {% if start %}{{ start }} – {{ end }}{% endif %}<br>
+      {#-- position --#}
+      {% if job.position %}{{ job.position }}<br>{% endif %}
+      {#-- institution/name --#}
+      {% if job.institution %}{{ job.institution }}<br>{% elsif job.name %}{{ job.name }}<br>{% endif %}
+      {#-- summary --#}
+      {% if job.summary %}{{ job.summary }}<br>{% endif %}
+      {#-- website --#}
+      {% if job.website %}<a href="{{ job.website }}" rel="noopener">{{ job.website }}</a>{% endif %}
+      {#-- optional highlights stay hidden per your new spec; remove this comment if you later want them back --#}
     </li>
   {% endfor %}
 </ul>
@@ -77,21 +79,25 @@ nav_order: 2
 <h2>Education</h2>
 <ul>
   {% for ed in cv.education %}
+    {% assign start = ed.startDate %}
+    {% assign end   = ed.endDate | default: 'Present' %}
     <li>
-      <strong>{{ ed.studyType }}</strong>{% if ed.area %}, {{ ed.area }}{% endif %}
-      {% if ed.institution %} — {{ ed.institution }}{% endif %}
-      {% if ed.startDate %}
-        ({{ ed.startDate }}{% if ed.endDate %} – {{ ed.endDate }}{% endif %})
-      {% endif %}
+      {#-- dates line --#}
+      {% if start %}{{ start }} – {{ end }}{% endif %}<br>
+      {#-- studytype and area --#}
+      {% if ed.studyType %}{{ ed.studyType }}{% endif %}{% if ed.area %}, {{ ed.area }}{% endif %}<br>
+      {#-- institution --#}
+      {% if ed.institution %}{{ ed.institution }}<br>{% endif %}
+      {#-- highlights without bullets; supports string or list --#}
       {% if ed.highlights %}
         {% if ed.highlights.first or ed.highlights.size %}
-          <ul>
+          <ul class="no-bullets">
             {% for h in ed.highlights %}
               <li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>
             {% endfor %}
           </ul>
         {% else %}
-          <div><em>{{ ed.highlights | markdownify | remove: '<p>' | remove: '</p>' }}</em></div>
+          <div>{{ ed.highlights | markdownify | remove: '<p>' | remove: '</p>' }}</div>
         {% endif %}
       {% endif %}
     </li>

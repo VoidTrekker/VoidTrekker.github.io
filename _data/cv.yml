@@ -9,17 +9,17 @@ basics:
     countryCode: United Kingdom
   summary: I am a social scientist in people-environment studies and behavioural modelling in the Department of Social, Economic and Geographical Sciences (SEGS) at the James Hutton Institute (Aberdeen). My current research interests include socio-spatial representations, gaming method, Circular Economy, social simulation and AI-driven method in social sciences.
 work:
-  - name: The James Hutton Institute
-    position: Social Scientist
-    startDate: 'Feb 2025'
+  - startDate: 'Feb 2025'
     endDate: 'Present'
+    name: The James Hutton Institute
+    position: Social Scientist
     summary: Projects on NbS, underutilised crops, circular behaviours.
     website: https://www.hutton.ac.uk/people/jianyu-chen/
     highlights: []
-  - name: The James Hutton Institute
-    position: Tenure-track Social Scientist
-    startDate: 'Dec 2022'
+  - startDate: 'Dec 2022'
     endDate: 'Jan 2025'
+    name: The James Hutton Institute
+    position: Social Scientist (Tenure-track)
     summary: Projects on NbS, underutilised crops, circular behaviours.
     highlights: []
 education:
@@ -29,7 +29,7 @@ education:
     startDate: 'Nov 2015'
     endDate: 'Nov 2021'
     highlights:
-      - "Thesis: La mobilité quotidienne, résidentielle et sociale : représentations sociales et pratiques transmobilitaires. Le cas des frontaliers franco-luxembourgeois ([link](https://theses.hal.science/tel-03667953))"
+      - "Thesis: ([La mobilité quotidienne, résidentielle et sociale : représentations sociales et pratiques transmobilitaires. Le cas des frontaliers franco-luxembourgeois](https://theses.hal.science/tel-03667953))"
       - "*(The daily, residential and social mobility: social representations and transmobility practices. The case of cross-border commuters between France and Luxembourg)*"
   - institution: University of Strasbourg
     area: Environmental Geography
