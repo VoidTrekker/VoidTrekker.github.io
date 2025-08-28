@@ -2,5 +2,5 @@ title: "Jianyu Chen"
 description: "Personal website"
 theme: minima
 # If using GitHub Pages with a project site, set baseurl like "/my-site"
-baseurl: "/my-site"    # leave empty for user/organization site
+baseurl: ""    # leave empty for user/organization site
 url: "https://VoidTrekker.github.io"
