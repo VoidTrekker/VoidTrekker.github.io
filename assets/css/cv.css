@@ -1,0 +1,17 @@
+.no-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.no-bullets li {
+  margin: .25rem 0;
+}
+.date-box {
+  display: inline-block;
+  background-color: #CA7A2C;
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
