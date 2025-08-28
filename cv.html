@@ -7,14 +7,26 @@ nav_order: 2
 
 {% assign cv = site.data.cv %}
 
+<!-- ===== Header / Basics ===== -->
 <h1>{{ cv.basics.name }}</h1>
+
 <p>
   <strong>{{ cv.basics.label }}</strong><br>
   {% if cv.basics.email %}<a href="mailto:{{ cv.basics.email }}">{{ cv.basics.email }}</a><br>{% endif %}
-  {% if cv.basics.website %}<a href="{{ cv.basics.website }}">{{ cv.basics.website }}</a><br>{% endif %}
-  {% if cv.basics.location %}
-    {{ cv.basics.location.city }}{% if cv.basics.location.countryCode %}, {{ cv.basics.location.countryCode }}{% endif %}
-  {% endif %}
+
+  {%- if cv.basics.location -%}
+    {%- assign addr = cv.basics.location.address -%}
+    {%- assign city = cv.basics.location.city -%}
+    {%- assign postcode = cv.basics.location.postcode -%}
+    {%- assign country = cv.basics.location.countryCode -%}
+    {%- capture loc_line -%}
+      {%- if addr -%}{{ addr }}{% endif -%}
+      {%- if city %}{% if addr %}, {% endif %}{{ city }}{% endif -%}
+      {%- if postcode %}{% if addr or city %}, {% endif %}{{ postcode }}{% endif -%}
+      {%- if country %}{% if addr or city or postcode %}, {% endif %}{{ country }}{% endif -%}
+    {%- endcapture -%}
+    {%- if loc_line != "" -%}{{ loc_line }}{%- endif -%}
+  {%- endif -%}
 </p>
 
 {% if cv.basics.summary %}
@@ -34,14 +46,18 @@ nav_order: 2
 </ul>
 {% endif %}
 
+<!-- ===== Work ===== -->
 {% if cv.work and cv.work.size > 0 %}
 <h2>Work</h2>
 <ul>
   {% for job in cv.work %}
     <li>
-      <strong>{{ job.position }}</strong>, {{ job.name }}
-      {% if job.startDate %} ({{ job.startDate }}{% if job.endDate %} – {{ job.endDate }}{% endif %}){% endif %}<br>
+      <strong>{{ job.position }}</strong>{% if job.name %}, {{ job.name }}{% endif %}
+      {% if job.startDate %}
+        ({{ job.startDate }}{% if job.endDate %} – {{ job.endDate }}{% endif %})
+      {% endif %}<br>
       {% if job.summary %}{{ job.summary }}{% endif %}
+      {% if job.website %}<br><a href="{{ job.website }}" rel="noopener">{{ job.website }}</a>{% endif %}
       {% if job.highlights and job.highlights.size > 0 %}
         <ul>
           {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
@@ -52,24 +68,45 @@ nav_order: 2
 </ul>
 {% endif %}
 
+<!-- ===== Education ===== -->
 {% if cv.education and cv.education.size > 0 %}
 <h2>Education</h2>
 <ul>
   {% for ed in cv.education %}
     <li>
-      <strong>{{ ed.studyType }}</strong>, {{ ed.area }} — {{ ed.institution }}
-      {% if ed.startDate %} ({{ ed.startDate }}{% if ed.endDate %} – {{ ed.endDate }}{% endif %}){% endif %}
-    </li>
+      <strong>{{ ed.studyType }}</strong>{% if ed.area %}, {{ ed.area }}{% endif %}
+      {% if ed.institution %} — {{ ed.institution }}{% endif %}
+      {% if ed.startDate %}
+        ({{ ed.startDate }}{% if ed.endDate %} – {{ ed.endDate }}{% endif %})
+      {% endif %}
+      {% if ed.highlights %}
+  <ul>
+    {% for h in ed.highlights %}
+      <li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</ul>
+{% endif %}
+
+<!-- ===== Languages ===== -->
+{% if cv.languages and cv.languages.size > 0 %}
+<h2>Languages</h2>
+<ul>
+  {% for lang in cv.languages %}
+    <li>{{ lang.name }}{% if lang.level %} — {{ lang.level }}{% endif %}</li>
   {% endfor %}
 </ul>
 {% endif %}
 
+<!-- ===== Skills ===== -->
 {% if cv.skills and cv.skills.size > 0 %}
 <h2>Skills</h2>
 <ul>
   {% for s in cv.skills %}
     <li>
-      {{ s.name }}{% if s.level %} — {{ s.level }}{% endif %}
+      {{ s.name }}
+      {% if s.level %} — {{ s.level }}{% endif %}
       {% if s.keywords and s.keywords.size > 0 %}
         <br><small>{{ s.keywords | join: ", " }}</small>
       {% endif %}
@@ -78,12 +115,13 @@ nav_order: 2
 </ul>
 {% endif %}
 
+<!-- ===== Publications ===== -->
 {% if cv.publications and cv.publications.size > 0 %}
 <h2>Selected Publications</h2>
 <ul>
   {% for pub in cv.publications %}
     <li>
-      {% if pub.url %}<a href="{{ pub.url }}">{% endif %}
+      {% if pub.url %}<a href="{{ pub.url }}" rel="noopener">{% endif %}
       {{ pub.name }}{% if pub.url %}</a>{% endif %}.
       {% if pub.publisher %} {{ pub.publisher }}.{% endif %}
       {% if pub.releaseDate %} {{ pub.releaseDate }}.{% endif %}

@@ -1,41 +1,74 @@
 basics:
-  name: Jianyu Chen
-  label: Researcher
+  name: Dr Jianyu Chen
+  label: Social Science Researcher
   email: jianyu.chen@hutton.ac.uk
-  website: https://VoidTrekker.github.io
   location:
+    address: The James Hutton Institute, Craigiebuckler
     city: Aberdeen
-    countryCode: GB
-  profiles:
-    - network: GitHub
-      username: your-username
-      url: https://github.com/your-username
-  summary: Interdisciplinary social-science researcher focusing on circular economy and socio-cognitive representations.
+    postcode: AB15 8QH
+    countryCode: United Kingdom
+  summary: I am a social scientist in people-environment studies and behavioural modelling in the Department of Social, Economic and Geographical Sciences (SEGS) at the James Hutton Institute (Aberdeen). My current research interests include socio-spatial representations, gaming method, Circular Economy, social simulation and AI-driven method in social sciences.
 work:
-  - name: Institute
-    position: Researcher
-    startDate: '2021-01'
+  - name: The James Hutton Institute
+    position: Social Scientist
+    startDate: 'Feb 2025'
+    endDate: 'Present'
     summary: Projects on NbS, underutilised crops, circular behaviours.
-    highlights:
-      - p1
-      - p2
-      - p3
+    website: https://www.hutton.ac.uk/people/jianyu-chen/
+    highlights: []
+  - name: The James Hutton Institute
+    position: Tenure-track Social Scientist
+    startDate: 'Dec 2022'
+    endDate: 'Jan 2025'
+    summary: Projects on NbS, underutilised crops, circular behaviours.
+    highlights: []
 education:
-  - institution: University of X
-    area: Environmental Psychology
+  - institution: University of Strasbourg & Luxembourg Institute of Socio-Economic Research (LISER)
+    area: Environmental Psychology & Human Geography
     studyType: PhD
-    startDate: '2017-09'
-    endDate: '2021-12'
+    startDate: 'Nov 2015'
+    endDate: 'Nov 2021'
+    highlights:
+      - "Thesis: La mobilité quotidienne, résidentielle et sociale : représentations sociales et pratiques transmobilitaires. Le cas des frontaliers franco-luxembourgeois ([link](https://theses.hal.science/tel-03667953))"
+      - "*(The daily, residential and social mobility: social representations and transmobility practices. The case of cross-border commuters between France and Luxembourg)*"
+  - institution: University of Strasbourg
+    area: Environmental Geography
+    studyType: Master
+    startDate: 'Sep 2013'
+    endDate: 'Jun 2015'
+    highlights:
+      - "Thesis: La représentation de Strasbourg auprès des agents du Conseil de L'Europe. Une approche de lecture spatiale"
+      - "*(The representation of Strasbourg in the eyes of the agents of the Council of Europe. A spatial reading approach)*"
+  - institution: China Agricultural University
+    area: Land Resources Management
+    studyType: Bachelor
+    startDate: 'Sep 2006'
+    endDate: 'Jun 2010'
+languages:
+  - name: Chinese
+    level: native
+  - name: English
+    level: work proficient
+  - name: French
+    level: working proficient
+skills:
+  - name: R/Python
+    keywords:
+      - Multiple Correspondence Analysis (MCA)
+      - Regression Analysis
+      - Natural Language Processing (NLP)
+      - Embedding-based clustering
+      - Topic modelling (BERTopic)
+  - name: Adobe software set
+    keywords:
+      - Using Adobe Creative Suite for data visualisation
+      - Photoshop
+      - Illustrator
+      - InDesign
+      - Audition
 publications:
   - name: Exploring Social Representations of Circular Consumption
     publisher: Journal of Y
     releaseDate: '2024-06'
     url: https://doi.org/xxxx
     summary: Findings on second-hand purchasing in Scotland.
-skills:
-  - name: R/Python
-    level: advanced
-    keywords:
-      - MCA
-      - clustering
-      - BERTopic
