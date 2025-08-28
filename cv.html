@@ -58,10 +58,14 @@ nav_order: 2
       {% endif %}<br>
       {% if job.summary %}{{ job.summary }}{% endif %}
       {% if job.website %}<br><a href="{{ job.website }}" rel="noopener">{{ job.website }}</a>{% endif %}
-      {% if job.highlights and job.highlights.size > 0 %}
-        <ul>
-          {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
-        </ul>
+      {% if job.highlights %}
+        {% if job.highlights.first or job.highlights.size %}
+          <ul>
+            {% for h in job.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}
+          </ul>
+        {% else %}
+          <div>{{ job.highlights | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+        {% endif %}
       {% endif %}
     </li>
   {% endfor %}
@@ -80,12 +84,18 @@ nav_order: 2
         ({{ ed.startDate }}{% if ed.endDate %} – {{ ed.endDate }}{% endif %})
       {% endif %}
       {% if ed.highlights %}
-  <ul>
-    {% for h in ed.highlights %}
-      <li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>
-    {% endfor %}
-  </ul>
-{% endif %}
+        {% if ed.highlights.first or ed.highlights.size %}
+          <ul>
+            {% for h in ed.highlights %}
+              <li>{{ h | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div><em>{{ ed.highlights | markdownify | remove: '<p>' | remove: '</p>' }}</em></div>
+        {% endif %}
+      {% endif %}
+    </li>
+  {% endfor %}
 </ul>
 {% endif %}
 
