@@ -24,7 +24,7 @@ work:
     highlights: []
 education:
   - institution: University of Strasbourg & Luxembourg Institute of Socio-Economic Research (LISER)
-    area: **Environmental Psychology & Human Geography**
+    area: Environmental Psychology & Human Geography
     studyType: PhD
     startDate: 'Nov 2015'
     endDate: 'Nov 2021'
@@ -32,7 +32,7 @@ education:
       - "Thesis: ([La mobilité quotidienne, résidentielle et sociale : représentations sociales et pratiques transmobilitaires. Le cas des frontaliers franco-luxembourgeois](https://theses.hal.science/tel-03667953))"
       - "*(The daily, residential and social mobility: social representations and transmobility practices. The case of cross-border commuters between France and Luxembourg)*"
   - institution: University of Strasbourg
-    area: **Environmental Geography**
+    area: Environmental Geography
     studyType: Master
     startDate: 'Sep 2013'
     endDate: 'Jun 2015'
@@ -40,7 +40,7 @@ education:
       - "Thesis: La représentation de Strasbourg auprès des agents du Conseil de L'Europe. Une approche de lecture spatiale"
       - "*(The representation of Strasbourg in the eyes of the agents of the Council of Europe. A spatial reading approach)*"
   - institution: China Agricultural University
-    area: **Land Resources Management**
+    area: Land Resources Management
     studyType: Bachelor
     startDate: 'Sep 2006'
     endDate: 'Jun 2010'
