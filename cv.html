@@ -81,10 +81,9 @@ nav_order: 2
     {% assign start = ed.startDate %}
     {% assign end   = ed.endDate | default: 'Present' %}
     <li>
-      {% if start %}
-        <span class="date-box-ed">{{ start }} – {{ end }}</span><br>
-      {% endif %}
-      {% if ed.studyType %}{{ ed.studyType }}{% endif %}{% if ed.area %}, {{ ed.area }}{% endif %}<br>
+      {% if ed.studyType %}
+      <span class="edu-box">{{ ed.studyType }}</span>{% endif %}{% if ed.area %}, {{ ed.area }}{% endif %}<br>
+      {% if start %}{{ start }} – {{ end }}{% endif %}<br>
       {% if ed.institution %}{{ ed.institution }}<br>{% endif %}
       {% if ed.highlights %}
         {% if ed.highlights.first or ed.highlights.size %}
