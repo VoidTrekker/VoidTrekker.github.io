@@ -48,9 +48,9 @@ languages:
   - name: Chinese
     level: native
   - name: English
-    level: work proficient
+    level: working proficiency
   - name: French
-    level: working proficient
+    level: working proficiency
 skills:
   - name: R/Python
     keywords:
