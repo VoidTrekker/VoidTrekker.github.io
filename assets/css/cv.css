@@ -4,18 +4,23 @@
   margin: 0;
 }
 .no-bullets li {
-  margin: .25rem 0;
+  margin: .25rem 1rem;
 }
-.date-box-work {
+
+/* Pack the dates of work and education with box style */
+.work-date-box {
   display: inline-block;
   background-color: #CA7A2C;
   color: #fff;
   padding: 0.15rem 0.5rem;
-  border-radius: 6px;
+  border-radius: 5px;
   font-weight: bold;
   font-size: 0.9em;
+  margin-top: 1rem;
+  margin-left: -.3rem;
+  margin-bottom: .5rem;
 }
-.edu-box {
+.edu-date-box {
   display: inline-block;
   background-color: #0089A7;
   color: #fff;
@@ -23,4 +28,51 @@
   border-radius: 5px;
   font-weight: bold;
   font-size: 0.9em;
+  margin-top: 1rem;
+  margin-left: -.3rem;
+  margin-bottom: .5rem;
+}
+
+/* CV section with separator */
+.cv-section {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.cv-section:last-child {
+  border-bottom: none; /* don’t draw after the last */
+}
+
+/* Subtle card background for each Work/Education item */
+.cv-section h2 + ul > li {
+  background: #f5f6f7;        /* light grey */
+  border: 1px solid #e5e7ea;  /* faint border to define edge */
+  border-radius: 5px;
+  padding: 0.75rem 1rem;      /* inner breathing room */
+  margin: 1rem 0;             /* space between cards (works with your existing rule) */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04); /* very soft depth */
+}
+
+/* CV nested list structure for Work/Education */
+.cv-item { margin: 1.25rem 0; }
+.cv-item-details { margin-top: .5rem; padding-left: 0; list-style: none; }
+.cv-item-details .cv-line { margin: .25rem 0; }
+.cv-highlights { margin-top: .5rem; padding-left: 0; list-style: none; }
+.cv-highlights li { margin: .25rem 0; }
+
+/* Move card background from the outer <li> to the inner details list so date chips sit outside */
+.cv-section h2 + ul > li {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;           /* let the inner details control its own padding */
+}
+
+/* Apply the card look to the inner details only */
+.cv-item-details {
+  background: #f5f6f7;
+  border: 1px solid #e5e7ea;
+  border-radius: 5px;
+  padding: .3rem 1rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }

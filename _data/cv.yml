@@ -12,14 +12,14 @@ work:
   - startDate: 'Feb 2025'
     endDate: 'Present'
     name: The James Hutton Institute
-    position: Social Scientist
-    summary: Projects on NbS, underutilised crops, circular behaviours.
+    position: Social Science Researcher
+    summary: "Circular Economy Behaviours (C4); Ecological Knowledge Games (Co-PI, UKRI project)[Link](https://ecoknowgames.github.io)"
     website: https://www.hutton.ac.uk/people/jianyu-chen/
     highlights: []
   - startDate: 'Dec 2022'
     endDate: 'Jan 2025'
     name: The James Hutton Institute
-    position: Social Scientist (Tenure-track)
+    position: Social Science Researcher (Tenure-track)
     summary: Projects on NbS, underutilised crops, circular behaviours.
     highlights: []
   - startDate: 'May 2022'
@@ -35,7 +35,8 @@ education:
     startDate: 'Nov 2015'
     endDate: 'Nov 2021'
     highlights:
-      - "Thesis: [La mobilité quotidienne, résidentielle et sociale : représentations sociales et pratiques transmobilitaires. Le cas des frontaliers franco-luxembourgeois](https://theses.hal.science/tel-03667953)"
+      - French National IdEx Scholarship (Initiatives d'Excellence)
+      - "Thesis: La mobilité quotidienne, résidentielle et sociale : représentations sociales et pratiques transmobilitaires. Le cas des frontaliers franco-luxembourgeois [link](https://theses.hal.science/tel-03667953)"
       - "*(The daily, residential and social mobility: social representations and transmobility practices. The case of cross-border commuters between France and Luxembourg)*"
   - institution: University of Strasbourg
     area: Environmental Geography
@@ -45,6 +46,11 @@ education:
     highlights:
       - "Thesis: La représentation de Strasbourg auprès des agents du Conseil de L'Europe. Une approche de lecture spatiale"
       - "*(The representation of Strasbourg in the eyes of the agents of the Council of Europe. A spatial reading approach)*"
+  - institution: Alliance française
+    area: (B2 - C2)
+    studyType: French as a Foreign Language 
+    startDate: 'Jan 2012'
+    endDate: 'Jun 2013'
   - institution: China Agricultural University
     area: Land Resources Management
     studyType: Bachelor
@@ -52,11 +58,14 @@ education:
     endDate: 'Jun 2010'
 languages:
   - name: Chinese
-    level: native
-  - name: English
-    level: working proficiency
+    level: Native
+    flag: "🇨🇳"
   - name: French
-    level: working proficiency
+    level: Working proficiency (C2)
+    flag: "🇫🇷"
+  - name: English
+    level: Working proficiency
+    flag: "🇬🇧"
 skills:
   - name: R/Python
     keywords:

@@ -36,3 +36,7 @@ Desktop.ini
 
 # Environment files (if you have secrets)
 .env
+
+# Docker files
+docker-compose.yml
+Dockerfile
