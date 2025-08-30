@@ -7,10 +7,10 @@
   margin: .25rem 1rem;
 }
 
-/* Pack the dates of work and education with box style */
+/* Pack the dates of work with box style */
 .work-date-box {
   display: inline-block;
-  background-color: #CA7A2C;
+  background-color: #91989F;
   color: #fff;
   padding: 0.15rem 0.5rem;
   border-radius: 5px;
@@ -20,6 +20,11 @@
   margin-left: -.3rem;
   margin-bottom: .5rem;
 }
+/* Highlight the current work-date-box */
+.work-date-box.current {
+  background-color: #1B813E;
+}
+/* Pack the dates of education with box style */
 .edu-date-box {
   display: inline-block;
   background-color: #0089A7;

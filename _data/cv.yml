@@ -15,6 +15,7 @@ work:
     position: Social Science Researcher
     summary: "Circular Economy Behaviours (C4); Ecological Knowledge Games (Co-PI, UKRI project)[Link](https://ecoknowgames.github.io)"
     website: https://www.hutton.ac.uk/people/jianyu-chen/
+    current: true
     highlights: []
   - startDate: 'Dec 2022'
     endDate: 'Jan 2025'
@@ -36,7 +37,7 @@ education:
     endDate: 'Nov 2021'
     highlights:
       - French National IdEx Scholarship (Initiatives d'Excellence)
-      - "Thesis: La mobilité quotidienne, résidentielle et sociale : représentations sociales et pratiques transmobilitaires. Le cas des frontaliers franco-luxembourgeois [link](https://theses.hal.science/tel-03667953)"
+      - "Thesis: La mobilité quotidienne, résidentielle et sociale : représentations sociales et pratiques transmobilitaires. Le cas des frontaliers franco-luxembourgeois [🔗](https://theses.hal.science/tel-03667953)"
       - "*(The daily, residential and social mobility: social representations and transmobility practices. The case of cross-border commuters between France and Luxembourg)*"
   - institution: University of Strasbourg
     area: Environmental Geography
@@ -47,7 +48,7 @@ education:
       - "Thesis: La représentation de Strasbourg auprès des agents du Conseil de L'Europe. Une approche de lecture spatiale"
       - "*(The representation of Strasbourg in the eyes of the agents of the Council of Europe. A spatial reading approach)*"
   - institution: Alliance française
-    area: (B2 - C2)
+    area: Level C2 achieved
     studyType: French as a Foreign Language 
     startDate: 'Jan 2012'
     endDate: 'Jun 2013'
@@ -61,7 +62,7 @@ languages:
     level: Native
     flag: "🇨🇳"
   - name: French
-    level: Working proficiency (C2)
+    level: Working proficiency
     flag: "🇫🇷"
   - name: English
     level: Working proficiency
