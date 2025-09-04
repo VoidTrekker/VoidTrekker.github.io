@@ -88,9 +88,8 @@ nav_order: 2
     {% assign end   = ed.endDate | default: 'Present' %}
     <li class="cv-item">
       {% if start %}<div class="edu-date-box">{{ start }} – {{ end }}</div>{% endif %}
-      <ul class="no-bullets cv-item-details">
-        <li class="cv-line">{% if ed.studyType %}{{ ed.studyType }}{% endif %}{% if ed.area %}<br>
-           {{ ed.area }}{% endif %}</li>
+      <ul class="no-bullets cv-item-details"><li class="cv-line">{% if ed.studyType %}<b>{{ ed.studyType }}</b>
+        {% endif %}{% if ed.area %}<br>{{ ed.area }}{% endif %}</li>
         {% if ed.institution %}<li class="cv-line"><i>{{ ed.institution }}</i></li>{% endif %}
         {% if ed.highlights %}
           {% if ed.highlights.first or ed.highlights.size %}
